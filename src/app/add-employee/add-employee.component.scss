@@ -1,0 +1,67 @@
+.container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    span.close-modal {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+        top: 15px;
+        font-size: 20px;
+        color: #999;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
+    .form-group {
+        padding: 7px 0;
+        position: relative;
+    }
+    label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    input,
+    select {
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 6px;
+        border-radius: 4px;
+    }
+    .btn-field {
+        display: flex;
+        justify-content: end;
+        button.btn {
+            border: 0;
+            background: #047af3;
+            padding: 9px 15px;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        button.cancel-btn {
+            background: #607D8B;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    }
+}

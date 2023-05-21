@@ -1,0 +1,52 @@
+<div class="add-emp-modal container" #myModal>
+    <div class="content">
+        <h2>{{statusmode}} Employee</h2>
+        <span (click)="closeModal()" class="close-modal">&#10006;</span>
+        <form [formGroup]="addEmpForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" formControlName="empName" class="form-control" id="name" [ngClass]="{ 'is-invalid': submitted && f.empName.errors }">
+                <div *ngIf="submitted && f.empName.errors" class="invalid-feedback">
+                    <div *ngIf="f.empName.errors.required">Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="jobtitle">Job Title</label>
+                <select formControlName="empJobTitle" class="form-select" id="jobtitle" [ngClass]="{ 'is-invalid': submitted && f.empJobTitle.errors }">
+            <option value="">Select</option>
+            <option value="Manager">Manager</option>
+            <option value="Tech Lead">Tech Lead</option>
+            <option value="Software Developer">Software Developer</option>
+            <option value="Quality Analysis">Quality Analysis</option>
+            <option value="UI Designer">UI Designer</option>
+        </select>
+                <div *ngIf="submitted && f.empJobTitle.errors" class="invalid-feedback">
+                    <div *ngIf="f.empJobTitle.errors.required">Job Title is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" min="1" formControlName="empAge" class="form-control" id="age" [ngClass]="{ 'is-invalid': submitted && f.empAge.errors }">
+                <div *ngIf="submitted && f.empAge.errors" class="invalid-feedback">
+                    <div *ngIf="f.empAge.errors.required">Age is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sdate">Start Date</label>
+                <input type="date" formControlName="startDate" class="form-control" id="sdate" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }">
+                <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
+                    <div *ngIf="f.startDate.errors.required">Start Date is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="edate">End Date</label>
+                <input type="date" formControlName="endDate" class="form-control" id="edate">
+            </div>
+            <div class="btn-field">
+                <button (click)="closeModal()" type="button" class="btn cancel-btn">Cancel</button>
+                <button *ngIf="statusmode == 'Add'" (click)="addEmp()" type="button" class="btn">Add Emp</button>
+                <button *ngIf="statusmode == 'Update'" (click)="updateEmp()" type="button" class="btn">Update Emp</button>
+            </div>
+        </form>
+    </div>
+</div>
